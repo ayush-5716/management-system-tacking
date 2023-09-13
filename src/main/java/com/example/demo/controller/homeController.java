@@ -1,6 +1,7 @@
 package com.example.demo.controller;
 
 import java.io.IOException;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -31,6 +32,9 @@ public class homeController {
     JsonHandler<weatherObj> jsonWeath = new JsonHandler<>();
 
     JsonHandler<weatherObj> js = new JsonHandler<>();
+
+    @Autowired
+    itemRepo itemRep;
 
     static class DataPayload {
         private String longitude;
@@ -78,7 +82,10 @@ public class homeController {
 
     @RequestMapping("/maintenance_tracking")
     public String maintenance(Model model) throws IOException{
+        List<item> itemList = itemRep.findAll();
+        model.addAttribute("itemList", itemList);
         model.addAttribute("weath", js.getWeatherObject());
+
         return "maintenanceTracking/maintenance_page.html";
     }
 
