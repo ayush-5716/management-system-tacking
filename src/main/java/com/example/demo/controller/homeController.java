@@ -20,4 +20,9 @@ public class homeController {
     public static String add_material(){
         return "add_material/add_form.html";
     }
+
+    @RequestMapping("/complaint/form")
+    public static String form(){
+        return "complaint_form.html";
+    }
 }
