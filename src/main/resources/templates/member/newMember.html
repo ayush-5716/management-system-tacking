@@ -26,24 +26,24 @@
         <div id="layoutSidenav_content">
             <main>
                 <div class="container">
-                    <form id="contact" action="" method="post">
+                    <form id="contact" action="/createMember" th:object="${memberObj}" method="post">
                         <h3>Contest Participation</h3>
                         <h4>Please add the Details</h4>
                         <fieldset>
-                            <input placeholder="Your Name" type="text" tabindex="1" required autofocus>
+                            <input placeholder="Your Name" type="text" tabindex="1" required autofocus th:field="${memberObj.name}">
                         </fieldset>
                         <fieldset>
-                            <input placeholder="No of Household people" type="text" tabindex="2" required>
+                            <input placeholder="No of Household people" type="text" tabindex="2" required th:field="${memberObj.noOfPeople}">
                         </fieldset>
                         <fieldset>
-                            <input placeholder="Your Electricity Consumer ID" type="text" tabindex="3" required>
+                            <input placeholder="Your Electricity Consumer ID" type="text" tabindex="3" required th:field="${memberObj.electricityConsumerId}">
                         </fieldset>
                         <fieldset>
-                            <div class="radio-buttons">
+                            <!-- <div class="radio-buttons">
                                 <label>Are you willing to Participate in the Contest:</label>
                                 <input type="radio" name="Participate" value="Yes" tabindex="4"> Yes
                                 <input type="radio" name="Participate" value="No" tabindex="5"> No
-                            </div>
+                            </div> -->
                         </fieldset>
                         <fieldset>
                             <button name="submit" type="submit" id="contact-submit"
