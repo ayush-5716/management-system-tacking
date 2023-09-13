@@ -12,9 +12,23 @@ public class item {
     Long item_id;
     
     String item_name;
+    public String getDescription() {
+        return description;
+    }
+    public void setDescription(String description) {
+        this.description = description;
+    }
+    public String getOwner_name() {
+        return owner_name;
+    }
+    public void setOwner_name(String owner_name) {
+        this.owner_name = owner_name;
+    }
+    String description;
     int maintenance_tenure; //in months
     int replace_time; //in months
     int maintenance_urgency; //from 1 to 10
+    String owner_name;
 
     public String getItem_name() {
         return item_name;
