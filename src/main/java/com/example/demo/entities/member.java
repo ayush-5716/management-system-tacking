@@ -10,12 +10,22 @@ public class member {
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    Long member_id;
-    String name;
+    public Long member_id;
+    public String name;
+
+    public Long getWatts_used() {
+        return watts_used;
+    }
+
+    public void setWatts_used(Long watts_used) {
+        this.watts_used = watts_used;
+    }
+
+    Long watts_used;
 
     int noOfPeople;
 
-    float electricityConsumerId;
+    Long electricityConsumerId;
 
     public String getName() {
         return name;
@@ -33,11 +43,11 @@ public class member {
         this.noOfPeople = noOfPeople;
     }
 
-    public float getElectricityConsumerId() {
+    public Long getElectricityConsumerId() {
         return electricityConsumerId;
     }
 
-    public void setElectricityConsumerId(float electricityConsumerId) {
+    public void setElectricityConsumerId(Long electricityConsumerId) {
         this.electricityConsumerId = electricityConsumerId;
     }
 }
