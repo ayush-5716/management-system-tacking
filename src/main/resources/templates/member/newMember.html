@@ -3,13 +3,13 @@
 
 <head>
     <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <meta name="description" content="" />
-        <meta name="author" content="" />
-        <title>Dashboard - SmartTrack</title>
-        <link href="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/style.min.css" rel="stylesheet" />
-        <link rel="stylesheet" th:href="@{../css/styles.css}"/>
-        <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>Dashboard - SmartTrack</title>
+    <link href="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/style.min.css" rel="stylesheet" />
+    <link rel="stylesheet" th:href="@{../css/styles.css}" />
+    <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -24,7 +24,33 @@
         </div>
         <div id="layoutSidenav_content">
             <main>
-                
+                <div class="container">
+                    <form id="contact" action="" method="post">
+                        <h3>Contest Participation</h3>
+                        <h4>Please add the Details</h4>
+                        <fieldset>
+                            <input placeholder="Your Name" type="text" tabindex="1" required autofocus>
+                        </fieldset>
+                        <fieldset>
+                            <input placeholder="No of Household people" type="text" tabindex="2" required>
+                        </fieldset>
+                        <fieldset>
+                            <input placeholder="Your Electricity Consumer ID" type="text" tabindex="3" required>
+                        </fieldset>
+                        <fieldset>
+                            <div class="radio-buttons">
+                                <label>Are you willing to Participate in the Contest:</label>
+                                <input type="radio" name="Participate" value="Yes" tabindex="4"> Yes
+                                <input type="radio" name="Participate" value="No" tabindex="5"> No
+                            </div>
+                        </fieldset>
+                        <fieldset>
+                            <button name="submit" type="submit" id="contact-submit"
+                                data-submit="...Sending">Submit</button>
+                        </fieldset>
+                    </form>
+                              
+                </div>  
             </main>
             <footer class="py-4 bg-light mt-auto">
                 <div class="container-fluid px-4">
