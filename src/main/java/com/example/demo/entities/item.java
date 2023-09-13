@@ -9,9 +9,9 @@ import jakarta.persistence.Id;
 public class item {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE,generator = "employee_seq")
-    Long item_id;
+    public Long item_id;
     
-    String item_name;
+    public String item_name;
     public String getDescription() {
         return description;
     }
