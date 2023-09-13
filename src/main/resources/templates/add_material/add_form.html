@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
     <head th:replace="layouts :: header"></head>
+    <link rel="stylesheet" th:href="@{css/add_form.css}">
     <body>
         <nav th:replace="layouts :: nav-bar-idk"></nav>
         <div id="layoutSidenav">
@@ -13,23 +14,32 @@
             </div>
             <div id="layoutSidenav_content">
                 <main>
-                    
+                    <div class="container">  
+                        <form id="contact" action="" method="post">
+                          <h3>Add Material</h3>
+                          <h4>Please add the Details of the Material to be added to the society in</h4>
+                          <fieldset>
+                            <input placeholder="Item details" type="text" tabindex="1" required autofocus>
+                          </fieldset>
+                          <fieldset>
+                            <input placeholder="Item name" type="text" tabindex="2" required>
+                          </fieldset>
+                          <fieldset>
+                            <input placeholder="Maintenance period cycle ( in months)" type="text" tabindex="3" required>
+                          </fieldset>
+                          <fieldset>
+                            <input placeholder="Maintenance urgency" type="text" tabindex="4" required>
+                          </fieldset>
+                          <fieldset>
+                            <textarea placeholder="Owner name" tabindex="5" required></textarea>
+                          </fieldset>
+                          <fieldset>
+                            <button name="submit" type="submit" id="contact-submit" data-submit="...Sending">Submit</button>
+                          </fieldset>
+                        </form>
+                       
+                        
+                      </div>
                 </main>
-                <footer class="py-4 bg-light mt-auto">
-                    <div class="container-fluid px-4">
-                        <div class="d-flex align-items-center justify-content-between small">
-                            <div class="text-muted">Copyright &copy; Your Website 2023</div>
-                            <div>
-                                <a href="#">Privacy Policy</a>
-                                &middot;
-                                <a href="#">Terms &amp; Conditions</a>
-                            </div>
-                        </div>
-                    </div>
-                </footer>
-            </div>
-        </div>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
-        <script src="js/scripts.js"></script>
     </body>
 </html>
