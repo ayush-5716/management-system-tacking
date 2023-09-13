@@ -88,6 +88,15 @@
                    
 
                 </div>
+                <p>
+                <div class="col-md-3">
+                    <canvas id="myPieChart" height="50px" width="50px">
+                    </canvas>
+                    <script>
+                        var chartData = "[[${itemListString}]]"
+                    </script>
+                </div>
+                PIE CHART DISPLAYING MAINTENANCE URGENCY
             </main>
             <footer class="py-4 bg-light mt-auto">
                 <div class="container-fluid px-4">
@@ -105,6 +114,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
         crossorigin="anonymous"></script>
     <script src="js/scripts.js"></script>
+    <script type="text/javascript" th:src="@{../js/mychart.js}"></script>
 </body>
 
 </html>

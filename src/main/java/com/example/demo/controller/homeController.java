@@ -12,10 +12,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.example.demo.dto.itemRepo;
 import com.example.demo.dto.memberRepo;
+import com.example.demo.dto.urgencyCount;
 import com.example.demo.entities.item;
 import com.example.demo.entities.member;
 import com.example.demo.intrmObj.weatherObj;
 import com.example.demo.mappers.JsonHandler;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.gson.Gson;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
@@ -88,7 +90,11 @@ public class homeController {
         List<item> itemList = itemRep.findAll();
         model.addAttribute("itemList", itemList);
         model.addAttribute("weath", js.getWeatherObject());
-
+        
+        List<urgencyCount> itemListUrgency = itemRep.findUrgencyCount();
+        ObjectMapper objMapper = new ObjectMapper();
+        String jsonString = objMapper.writeValueAsString(itemListUrgency);
+        model.addAttribute("itemListString", jsonString);
         return "maintenanceTracking/maintenance_page.html";
     }
 
@@ -97,6 +103,7 @@ public class homeController {
         model.addAttribute("weath", js.getWeatherObject());
         List<member> memberList = membRepo.findAscending();
         model.addAttribute("memberList", memberList);
+        
         return "powerConsumption/leaderBoardPage.html";
     }
     
