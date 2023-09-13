@@ -22,7 +22,17 @@ public class homeController {
     }
 
     @RequestMapping("/complaint/form")
-    public static String form(){
-        return "complaint_form.html";
+    public static String complaint_form(){
+        return "Complaint/complaint_form.html";
+    }
+
+    @RequestMapping("/complaint/request")
+    public static String requestForm(){
+        return "Complaint/request_form.html";
+    }
+
+    @RequestMapping("/maintenance_tracking")
+    public static String maintenance(){
+        return "maintenanceTracking/maintenance_page.html";
     }
 }
