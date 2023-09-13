@@ -36,4 +36,11 @@ public class homeController {
     public static String maintenance(Model model){
         return "maintenanceTracking/maintenance_page.html";
     }
+
+    @RequestMapping("/powerConsumption/leaderboard")
+    public static String leaderBoard(Model model){
+        return "powerConsumption/leaderBoardPage.html";
+    }
+
+
 }
