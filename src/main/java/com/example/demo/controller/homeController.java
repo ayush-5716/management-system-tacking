@@ -36,6 +36,9 @@ public class homeController {
     @Autowired
     itemRepo itemRep;
 
+    @Autowired
+    memberRepo membRepo;
+
     static class DataPayload {
         private String longitude;
         private String latitude;
@@ -92,6 +95,8 @@ public class homeController {
     @RequestMapping("/powerConsumption/leaderboard")
     public String leaderBoard(Model model) throws IOException{
         model.addAttribute("weath", js.getWeatherObject());
+        List<member> memberList = membRepo.findAscending();
+        model.addAttribute("memberList", memberList);
         return "powerConsumption/leaderBoardPage.html";
     }
     
@@ -105,6 +110,8 @@ public class homeController {
 
     @PostMapping("/createMember")
     public String createMember(Model model,member member_temp){
+        
+        member_temp.setWatts_used((long)(Math.random() * (5000 - 1000)) + 1000);
         memRepo.save(member_temp);
         return "redirect:/newMember";
     }
