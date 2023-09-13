@@ -3,36 +3,79 @@
 
 <head>
     <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <meta name="description" content="" />
-        <meta name="author" content="" />
-        <title>Dashboard - SmartTrack</title>
-        <link href="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/style.min.css" rel="stylesheet" />
-        <link rel="stylesheet" th:href="@{../css/styles.css}"/>
-        <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>Dashboard - SmartTrack</title>
+    <link href="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/style.min.css" rel="stylesheet" />
+    <link rel="stylesheet" th:href="@{../css/styles.css}" />
+    <link rel="stylesheet" th:href="@{../css/leaderboard.css}" />
+    <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
-    <nav th:replace="layouts :: nav-bar-idk"></nav>
+    <!-- <nav th:replace="layouts :: nav-bar-idk"></nav> -->
     <div id="layoutSidenav">
-        <div id="layoutSidenav_nav">
+        <!-- <div id="layoutSidenav_nav">
             <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
                 <div class="sb-sidenav-menu">
                     <div th:replace="layouts :: nav-items"></div>
                 </div>
             </nav>
-        </div>
+        </div> -->
         <div id="layoutSidenav_content">
             <main>
-
+                <div id="header">
+                    <h1>Ranking</h1>
+                    <button class="share">
+                        <i class="ph ph-share-network"></i>
+                    </button>
+                </div>
+                <div id="leaderboard">
+                    <div class="ribbon"></div>
+                    <table>
+                        <tr>
+                            <td class="number">1</td>
+                            <td class="name">Lee Taeyong</td>
+                            <td class="points">
+                                258.244 <img class="gold-medal"
+                                    src="https://github.com/malunaridev/Challenges-iCodeThis/blob/master/4-leaderboard/assets/gold-medal.png?raw=true"
+                                    alt="gold medal" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="number">2</td>
+                            <td class="name">Mark Lee</td>
+                            <td class="points">258.242</td>
+                        </tr>
+                        <tr>
+                            <td class="number">3</td>
+                            <td class="name">Xiao Dejun</td>
+                            <td class="points">258.223</td>
+                        </tr>
+                        <tr>
+                            <td class="number">4</td>
+                            <td class="name">Qian Kun</td>
+                            <td class="points">258.212</td>
+                        </tr>
+                        <tr>
+                            <td class="number">5</td>
+                            <td class="name">Johnny Suh</td>
+                            <td class="points">258.208</td>
+                        </tr>
+                    </table>
+                    <div id="buttons">
+                        <button class="exit">Exit</button>
+                        <button class="continue">Continue</button>
+                    </div>
+                </div>
             </main>
             <footer class="py-4 bg-light mt-auto">
                 <div class="container-fluid px-4">
                     <div class="d-flex align-items-center justify-content-between small">
                         <div class="text-muted">Copyright &copy; Your Website 2023</div>
                         <div>
-                            <a href="#">Privacy Policy</a>
-                            &middot;
+                            <a href="#">Privacy Policy</a> &middot;
                             <a href="#">Terms &amp; Conditions</a>
                         </div>
                     </div>
