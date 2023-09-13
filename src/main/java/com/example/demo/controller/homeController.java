@@ -41,6 +41,11 @@ public class homeController {
     public static String leaderBoard(Model model){
         return "powerConsumption/leaderBoardPage.html";
     }
+    
+    @RequestMapping("/newMember")
+    public static String newMember(Model model){
+        return "member/newMember.html";
+    }
 
 
 }
