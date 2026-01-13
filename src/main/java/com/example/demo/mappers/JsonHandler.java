@@ -1,10 +1,6 @@
 package com.example.demo.mappers;
 
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.io.OutputStream;
+import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 
@@ -12,6 +8,8 @@ import com.example.demo.intrmObj.weatherObj;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.gson.JsonObject;
+import org.springframework.core.io.ClassPathResource;
+
 public class JsonHandler<T> {
 
     public void write(T userD,String fileName) throws JsonProcessingException {
@@ -34,10 +32,16 @@ public class JsonHandler<T> {
 
 
     public weatherObj getWeatherObject() throws IOException{
-        byte[] jsonData = Files.readAllBytes(Paths.get("src/main/resources/templates/weathStore.json"));
-        ObjectMapper objectMap =  new ObjectMapper();
-        weatherObj us = objectMap.readValue(jsonData,weatherObj.class);
-        return us;
+        ClassPathResource resource = new ClassPathResource("templates/weathStore.json");
+        try (InputStream inputStream = resource.getInputStream()) {
+            byte[] jsonData = inputStream.readAllBytes();
+            ObjectMapper objectMap =  new ObjectMapper();
+            weatherObj us = objectMap.readValue(jsonData,weatherObj.class);
+            return us;
+        }catch (Exception e){
+            return null;
+        }
+//        byte[] jsonData = Files.readAllBytes(Paths.get("src/main/resources/templates/weathStore.json"));
     }
 
     public void deleteData(String fileName){
